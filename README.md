@@ -2,6 +2,52 @@
 
 A simplified HausMe-like application with local JWT authentication, PostgreSQL database, and a basic renovation cost calculator.
 
+---
+
+## 📋 Interview Tasks
+
+### Task 1: Renovation Calculator Form (~30min)
+
+Implement the renovation cost calculator form split across two pages:
+
+**Page 1** (`/calculator`) - Property Details:
+| Field | Type | Validation |
+|-------|------|------------|
+| `surface` | number input | 1-10000 m² |
+| `floor` | select | ground / intermediate / top |
+| `bathrooms` | number input | 0-20 |
+
+**Page 2** (`/calculator/step2`) - Renovation Options:
+| Field | Type | Validation |
+|-------|------|------------|
+| `renovation_type` | select | full / partial / minimal |
+| `quality` | select | high / medium / economy |
+| `energy_upgrade` | checkbox | boolean |
+
+**Requirements:**
+- Pass data from step 1 to step 2 (localStorage, context, or query params)
+- Call `POST /api/calculate/estimate` with all 6 fields
+- Include `Authorization: Bearer <token>` header
+- Display the cost breakdown returned by the API
+
+---
+
+### Task 2: Time Estimate Extension (~45min)
+
+Extend the calculator to estimate renovation duration.
+
+**Formula documentation:** See `docs/time-estimate.md`
+
+**Backend** (`backend/calculator.py`):
+- Add `estimated_days` field to the response
+- Formula: `estimated_days = labor_cost / DAILY_TEAM_COST`
+- Use `DAILY_TEAM_COST = 800` (€/day for a standard team)
+
+**Frontend** (`frontend/app/calculator/step2/page.tsx`):
+- Display the time estimate in the results panel
+
+---
+
 ## Quick Start
 
 ### Prerequisites
@@ -116,5 +162,8 @@ full-stack-tech-interview/
         │   ├── login/page.tsx
         │   └── register/page.tsx
         ├── dashboard/page.tsx
-        └── calculator/page.tsx
+        └── calculator/
+            ├── page.tsx      # Step 1: Property details
+            └── step2/
+                └── page.tsx  # Step 2: Renovation options + results
 ```
