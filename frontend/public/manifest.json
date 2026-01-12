@@ -1,0 +1,7 @@
+{
+  "name": "HausMe Interview",
+  "short_name": "HausMe",
+  "icons": [],
+  "start_url": "/",
+  "display": "standalone"
+}
