@@ -6,7 +6,19 @@ A simplified HausMe-like application with local JWT authentication, PostgreSQL d
 
 ## 📋 Interview Tasks
 
-### Task 1: Renovation Calculator Form (~30min) — *AI Allowed*
+### Task 1: Algorithmic Exercise (~15min) — ⚠️ *NO AI Allowed*
+
+Implement a function to format renovation estimate summaries for display.
+
+**Task:** Given an estimate breakdown dictionary, return a formatted summary string with European currency formatting.
+
+See the interviewer for the full specification.
+
+---
+
+### Task 2: Web Application (~60min) — *AI Allowed*
+
+#### Part A: Renovation Calculator Form (~30min)
 
 Implement the renovation cost calculator form split across two pages:
 
@@ -30,19 +42,7 @@ Implement the renovation cost calculator form split across two pages:
 - Include `Authorization: Bearer <token>` header
 - Display the cost breakdown returned by the API
 
----
-
-### Task 2: Algorithmic Exercise + Time Estimate (~45min)
-
-#### Part A: Formatting Function (~15min) — ⚠️ *NO AI Allowed*
-
-Implement a function to format renovation estimate summaries for display.
-
-**Task:** Given an estimate breakdown dictionary, return a formatted summary string with European currency formatting.
-
-See the interviewer for the full specification.
-
-#### Part B: Time Estimate Feature (~30min) — *AI Allowed*
+#### Part B: Time Estimate Feature (~30min)
 
 Extend the calculator to estimate renovation duration.
 
