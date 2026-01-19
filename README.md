@@ -12,7 +12,36 @@ Implement a function to format renovation estimate summaries for display.
 
 **Task:** Given an estimate breakdown dictionary, return a formatted summary string with European currency formatting.
 
-See the interviewer for the full specification.
+**Function signature:**
+```python
+def format_estimate_summary(estimate: dict) -> str:
+```
+
+**Input example:**
+```python
+{
+    "total_cost": 143500,
+    "base_cost": 114400,
+    "bathroom_cost": 10500,
+    "energy_upgrade_cost": 18750,
+    "labor_cost": 71750,
+    "material_cost": 71750
+}
+```
+
+**Output example:**
+```
+"TOTAL: €143.500,00 | Base: €114.400,00 | Bathrooms: €10.500,00 | Energy: €18.750,00"
+```
+
+**Rules:**
+1. Format numbers in European style (€XX.XXX,XX with dot as thousands separator, comma for decimals)
+2. Only include non-zero costs in the output
+3. Order: Total first, then other costs alphabetically by key name
+4. Key names should be Title Case without "_cost" suffix
+5. If energy_upgrade_cost is 0, omit it from the output
+
+
 
 ---
 
